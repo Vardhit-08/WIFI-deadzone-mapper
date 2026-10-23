@@ -1,0 +1,66 @@
+/*
+ * WiFiAnalyzer
+ * Copyright (C) 2015 - 2026 VREM Software Development <VREMSoftwareDevelopment@gmail.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>
+ */
+package com.vrem.util
+
+import android.content.Context
+import android.content.pm.PackageInfo
+import android.content.pm.PackageManager.PackageInfoFlags
+import android.net.wifi.ScanResult
+import android.os.Build
+import androidx.annotation.RequiresApi
+import androidx.core.content.pm.PackageInfoCompat
+import java.security.MessageDigest
+
+private const val SIGNATURE_ALGORITHM = "SHA-256"
+private const val SIGNATURE_BYTES = 3
+
+fun Context.packageInfo(): PackageInfo =
+    if (buildMinVersionT()) {
+        packageInfoAndroidT()
+    } else {
+        packageInfoLegacy()
+    }
+
+@RequiresApi(Build.VERSION_CODES.TIRAMISU)
+private fun Context.packageInfoAndroidT(): PackageInfo =
+    packageManager.getPackageInfo(packageName, PackageInfoFlags.of(0))
+
+private fun Context.packageInfoLegacy(): PackageInfo = packageManager.getPackageInfo(packageName, 0)
+
+fun Context.signature(): String =
+    runCatching {
+        PackageInfoCompat
+            .getSignatures(packageManager, packageName)
+            .first()
+            .toByteArray()
+            .let { MessageDigest.getInstance(SIGNATURE_ALGORITHM).digest(it) }
+            .take(SIGNATURE_BYTES)
+            .joinToString(String.EMPTY) { "%02x".format(it) }
+    }.getOrDefault(String.EMPTY)
+
+fun ScanResult.ssid(): String =
+    if (buildMinVersionT()) {
+        ssidAndroidT()
+    } else {
+        ssidLegacy()
+    }.removeSurrounding("\"")
+
+@RequiresApi(Build.VERSION_CODES.TIRAMISU)
+private fun ScanResult.ssidAndroidT(): String = String.nullToEmpty(wifiSsid?.toString())
+
+private fun ScanResult.ssidLegacy(): String = String.nullToEmpty(SSID)

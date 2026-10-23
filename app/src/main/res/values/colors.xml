@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ WiFiAnalyzer
+  ~ Copyright (C) 2015 - 2026 VREM Software Development <VREMSoftwareDevelopment@gmail.com>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>
+  -->
+
+<resources>
+    <!-- Muted slate neutral -->
+    <color name="regular">#8E9AA8</color>
+    <!-- Deep peaceful indigo for active tabs/selections -->
+    <color name="selected">#5C6BC0</color>
+    <!-- Soft indigo tint (20% opacity) for selection backgrounds -->
+    <color name="selected_background">#335C6BC0</color>
+    <!-- Channel neutral reference preserved -->
+    <color name="channel">@color/regular</color>
+    <!-- Soft sky blue for readable channel text -->
+    <color name="channel_number">#38BDF8</color>
+    <!-- Deep ocean cyan for frequency labels -->
+    <color name="frequency">#0EA5E9</color>
+    <!-- Soft cool lavender-slate for security tags -->
+    <color name="security">#7986CB</color>
+    <!-- Balanced muted teal for distance indicators -->
+    <color name="distance">#2DD4BF</color>
+    <!-- Clear rose red for weak signal/errors -->
+    <color name="error">#EF4444</color>
+    <!-- Warm amber for medium signal/warnings -->
+    <color name="warning">#F59E0B</color>
+    <!-- Crisp emerald green for strong signal/success -->
+    <color name="success">#10B981</color>
+    <!-- Elegant charcoal canvas instead of harsh mid-grey -->
+    <color name="background">#1E222B</color>
+    <!-- Deep pitch black for text/contrast -->
+    <color name="black">#0B0E14</color>
+    <!-- Sleek dark navy surface for bottom navigation bar -->
+    <color name="nav_bottom_background">#161922</color>
+</resources>
