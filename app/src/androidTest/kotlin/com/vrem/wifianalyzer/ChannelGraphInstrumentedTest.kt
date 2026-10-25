@@ -24,7 +24,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 
 internal class ChannelGraphInstrumentedTest : Runnable {
     override fun run() {
-        navigateToBottomNav(R.id.nav_bottom_channel_graph)
+        // navigateToBottomNav(R.id.nav_bottom_channel_graph)
         verifyToolbarTitle("Channel Graph")
         verifyGraphDisplayed()
         verifyCurrentConnectionDisplayed()

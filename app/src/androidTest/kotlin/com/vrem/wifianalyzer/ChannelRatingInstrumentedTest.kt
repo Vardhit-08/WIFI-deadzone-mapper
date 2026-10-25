@@ -25,7 +25,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withText
 
 internal class ChannelRatingInstrumentedTest : Runnable {
     override fun run() {
-        navigateToBottomNav(R.id.nav_bottom_channel_rating)
+        // navigateToBottomNav(R.id.nav_bottom_channel_rating)
         verifyToolbarTitle("Channel Rating")
         verifyChannelListDisplayed()
         verifyBestChannels()

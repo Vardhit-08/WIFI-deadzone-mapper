@@ -208,4 +208,51 @@
     <string name="wifi_width_80mhz" translatable="false">"80 MHz"</string>
     <string name="wifi_width_160mhz" translatable="false">"160 MHz"</string>
     <string name="wifi_width_320mhz" translatable="false">"320 MHz"</string>
+
+    <!-- Heatmap -->
+    <string name="heatmap_create_title">"Create new heatmap"</string>
+    <string name="heatmap_create_summary">"Survey a floor plan"</string>
+    <string name="heatmap_previous_title">"Previous heatmaps"</string>
+    <string name="heatmap_previous_summary">"Open your saved heatmaps"</string>
+    <string name="heatmap_previous_hint">"Tap to open. Long press to delete."</string>
+    <string name="heatmap_previous_item">"%1$s  •  %2$d readings  •  %3$s"</string>
+    <string name="heatmap_no_saved">"No saved heatmaps yet"</string>
+    <string name="heatmap_plus" translatable="false">"+"</string>
+    <string name="heatmap_pick_hint">"Tap + to choose a floor plan image from your gallery"</string>
+    <string name="heatmap_grid_title">"Choose the grid square size"</string>
+    <string name="heatmap_grid_hint">"Smaller squares give more detail but need more readings."</string>
+    <string name="heatmap_grid_small">"Small"</string>
+    <string name="heatmap_grid_medium">"Medium"</string>
+    <string name="heatmap_grid_large">"Large"</string>
+    <string name="heatmap_back">"Back"</string>
+    <string name="heatmap_edit">"Edit"</string>
+    <string name="heatmap_reset">"Reset"</string>
+    <string name="heatmap_save">"Save"</string>
+    <string name="heatmap_saved">"Saved"</string>
+    <string name="heatmap_export">"Export"</string>
+    <string name="heatmap_generate">"Generate"</string>
+    <string name="heatmap_generate_progress">"Generate (%1$d/%2$d)"</string>
+    <string name="heatmap_status_connected">"%1$s  •  %2$d dBm  •  %3$d readings"</string>
+    <string name="heatmap_status_not_connected">"Not connected to Wi-Fi  •  %1$d readings"</string>
+    <string name="heatmap_status_result">"%1$s  •  %2$d readings"</string>
+    <string name="heatmap_hint_idle">"Walk to a spot, tap its square to select it, then tap again to record the signal. At least %1$d readings are needed."</string>
+    <string name="heatmap_hint_record">"Tap the selected square again to record the signal here."</string>
+    <string name="heatmap_hint_delete">"Tap the selected square again to delete its reading."</string>
+    <string name="heatmap_hint_result">"Heatmap built from your readings. Areas without nearby readings stay uncoloured."</string>
+    <string name="heatmap_recorded">"Recorded %1$d dBm"</string>
+    <string name="heatmap_deleted">"Reading deleted"</string>
+    <string name="heatmap_no_connection">"Connect to a Wi-Fi network first"</string>
+    <string name="heatmap_wrong_network">"This survey is for %1$s. Reconnect to it or reset."</string>
+    <string name="heatmap_image_error">"Could not open that image"</string>
+    <string name="heatmap_saved_toast">"Heatmap saved"</string>
+    <string name="heatmap_save_error">"Could not save the heatmap"</string>
+    <string name="heatmap_exported">"Exported to Pictures/WiFiHeatmap"</string>
+    <string name="heatmap_export_error">"Export failed"</string>
+    <string name="heatmap_export_unsupported">"Export needs Android 10 or newer. Use Save instead."</string>
+    <string name="heatmap_missing_image">"The floor plan image for this heatmap is missing"</string>
+    <string name="heatmap_delete_title">"Delete this heatmap?"</string>
+    <string name="heatmap_reset_title">"Remove all readings?"</string>
+    <string name="heatmap_discard_title">"Discard the current survey?"</string>
+    <string name="heatmap_yes">"Yes"</string>
+    <string name="heatmap_cancel">"Cancel"</string>
 </resources>

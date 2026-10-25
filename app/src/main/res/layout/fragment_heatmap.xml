@@ -17,12 +17,380 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>
 -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/action_heatmap" />
+    <!-- HOME: two options side by side -->
+    <LinearLayout
+        android:id="@+id/heatmapHome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/homeCreate"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_margin="@dimen/list_view_item_horizontal_spacer"
+            android:layout_weight="1"
+            android:background="@color/background"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_vertical_half_margin">
+
+            <ImageView
+                android:layout_width="@dimen/icon_large"
+                android:layout_height="@dimen/icon_large"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_insert_chart"
+                android:tint="@color/selected" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_half_margin"
+                android:gravity="center"
+                android:text="@string/heatmap_create_title"
+                android:textColor="@color/selected"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/heatmap_create_summary"
+                android:textColor="@color/regular" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/homePrevious"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_margin="@dimen/list_view_item_horizontal_spacer"
+            android:layout_weight="1"
+            android:background="@color/background"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_vertical_half_margin">
+
+            <ImageView
+                android:layout_width="@dimen/icon_large"
+                android:layout_height="@dimen/icon_large"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_list"
+                android:tint="@color/selected" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_half_margin"
+                android:gravity="center"
+                android:text="@string/heatmap_previous_title"
+                android:textColor="@color/selected"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/heatmap_previous_summary"
+                android:textColor="@color/regular" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- PICK: big plus sign to choose a floor plan -->
+    <LinearLayout
+        android:id="@+id/heatmapPick"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/pickPlus"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/heatmap_plus"
+                android:textColor="@color/selected"
+                android:textSize="120sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/heatmap_pick_hint"
+                android:textColor="@color/regular" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/pickBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/selected"
+            android:text="@string/heatmap_back"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <!-- SETUP: choose grid square size -->
+    <LinearLayout
+        android:id="@+id/heatmapSetup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/heatmap_grid_title"
+            android:textColor="@color/selected"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/setupPreview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/activity_vertical_half_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_half_margin"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:contentDescription="@null"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/heatmap_grid_hint"
+            android:textColor="@color/regular" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/setupSmall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/selected"
+                android:text="@string/heatmap_grid_small"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/setupMedium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/selected"
+                android:text="@string/heatmap_grid_medium"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/setupLarge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/selected"
+                android:text="@string/heatmap_grid_large"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/setupBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/regular"
+            android:text="@string/heatmap_back"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <!-- WORK: survey, result and saved view share the canvas -->
+    <LinearLayout
+        android:id="@+id/heatmapWork"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/workStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/selected"
+            android:textStyle="bold"
+            tools:text="MyWiFi  -62 dBm" />
+
+        <com.vrem.wifianalyzer.wifi.heatmap.HeatmapCanvasView
+            android:id="@+id/workCanvas"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/activity_vertical_half_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_half_margin"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/workHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_half_margin"
+            android:textColor="@color/regular"
+            tools:text="Tap a square to select it" />
+
+        <LinearLayout
+            android:id="@+id/surveyBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/surveyBack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/regular"
+                android:text="@string/heatmap_back"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/surveyReset"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/regular"
+                android:text="@string/heatmap_reset"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/surveyGenerate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:backgroundTint="@color/selected"
+                android:text="@string/heatmap_generate"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/resultBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/resultBack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/regular"
+                android:text="@string/heatmap_edit"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/resultSave"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/selected"
+                android:text="@string/heatmap_save"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/resultExport"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/selected"
+                android:text="@string/heatmap_export"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/viewBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/viewBack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/regular"
+                android:text="@string/heatmap_back"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/viewExport"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/selected"
+                android:text="@string/heatmap_export"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- PREVIOUS: saved heatmaps -->
+    <LinearLayout
+        android:id="@+id/heatmapPrevious"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/heatmap_previous_title"
+            android:textColor="@color/selected"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/previousEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_half_margin"
+            android:text="@string/heatmap_no_saved"
+            android:textColor="@color/regular" />
+
+        <ListView
+            android:id="@+id/previousList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/heatmap_previous_hint"
+            android:textColor="@color/regular" />
+
+        <Button
+            android:id="@+id/previousBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/selected"
+            android:text="@string/heatmap_back"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
 </FrameLayout>
