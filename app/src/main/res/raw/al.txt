@@ -5,6 +5,17 @@
 
 TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
+Wi-Fi Deadzone Mapper
+Copyright (C) 2026 Vardhit
+
+Based on WiFiAnalyzer:
+Copyright (C) 2015 - 2026 VREM Software Development <VREMSoftwareDevelopment@gmail.com>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
 1. Definitions.
 
    "License" shall mean the terms and conditions for use, reproduction,

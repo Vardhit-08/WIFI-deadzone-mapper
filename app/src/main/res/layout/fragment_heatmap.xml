@@ -17,6 +17,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>
 -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -48,7 +49,7 @@
                 android:layout_height="@dimen/icon_large"
                 android:contentDescription="@null"
                 android:src="@drawable/ic_insert_chart"
-                android:tint="@color/selected" />
+                app:tint="@color/selected" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -86,7 +87,7 @@
                 android:layout_height="@dimen/icon_large"
                 android:contentDescription="@null"
                 android:src="@drawable/ic_list"
-                android:tint="@color/selected" />
+                app:tint="@color/selected" />
 
             <TextView
                 android:layout_width="wrap_content"

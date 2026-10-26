@@ -22,7 +22,7 @@
     <bool name="keep_screen_on_default" translatable="false">false</bool>
     <bool name="wifi_off_on_exit_default" translatable="false">false</bool>
     <string name="about_contributor_title">"Contributors"</string>
-    <string name="about_description_text">"Optimize your Wi-Fi network, by checking Wi-Fi network status, signal strength and identifying crowded channels using an open-source WiFiAnalyzer for Android"</string>
+    <string name="about_description_text">"An indoor Wi-Fi survey and signal optimization tool. Upload a building floor plan, record live signal readings (RSSI) on an adaptive grid, and generate soft radial Inverse Distance Weighting (IDW) heatmaps to identify network coverage gaps . Optimize your Wi-Fi network, by checking Wi-Fi network status, signal strength and identifying crowded channels using an open-source WiFiAnalyzer for Android"</string>
     <string name="about_description_title">"Description:"</string>
     <string name="about_documentation">"Documentation:"</string>
     <string name="about_documentation_url" translatable="false">"https://vremsoftwaredevelopment.github.io/WiFiAnalyzer/#documentation"</string>
