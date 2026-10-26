@@ -19,13 +19,13 @@ Ready-to-use debug APK for testing:
 
 ## 📸 Screenshots
 
-|                    1. Access Points                     |                      2. Time Graph                      |                       3. Heatmap tab                       |
-|:-------------------------------------------------------:|:-------------------------------------------------------:|:----------------------------------------------------------:|
-| <img src=""screenshots/01_home_screen.jpeg"" width="230"/> | <img src=""screenshots/02_survey_grid.jpeg"" width="230"/> | <img src=""screenshots/03_heatmap_result.jpeg"" width="230"/> |
+| 1. Access Points | 2. Time Graph | 3. Heatmap Tab |
+|:---:|:---:|:---:|
+| <img src="screenshots/01_home_screen.jpeg" width="230"/> | <img src="screenshots/02_survey_grid.jpeg" width="230"/> | <img src="screenshots/03_heatmap_result.jpeg" width="230"/> |
 
-|                 4. New heatmap generation                 |                  5. Previous heatmaps                  |
-|:---------------------------------------------------------:|:------------------------------------------------------:|
-| <img src=""screenshots/04_new_heatmap_generation.jpeg"" width="230"/> | <img src=""screenshots/05_time_graph.jpeg"" width="230"/> |
+| 4. New Heatmap Generation | 5. Previous Heatmaps |
+|:---:|:---:|
+| <img src="screenshots/04_new_heatmap_generation.jpeg" width="230"/> | <img src="screenshots/05_time_graph.jpeg" width="230"/> |
 
 ---
 
