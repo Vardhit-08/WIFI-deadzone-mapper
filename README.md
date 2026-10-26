@@ -13,7 +13,7 @@ An open-source Android tool designed to survey indoor Wi-Fi signal coverage, ide
 
 Ready-to-use debug APK for testing:
 
-👉 **[Download WiFiDeadzone-v1.0.apk]([[https://github.com/Vardhit-08/WIFI_deadzone/releases/download/v1.0.0/WiFiDeadzone-v1.0.apk](https://github.com/Vardhit-08/WIFI-deadzone-mapper/releases/download/v1.0.0/WiFiDeadzone-v1.0.apk)](https://github.com/Vardhit-08/WIFI-deadzone-mapper/releases/download/v1.0.0/WIFI.deadzone.mapper.apk))** 👈
+👉 **[Download WiFiDeadzone-v1.0.apk](https://github.com/Vardhit-08/WIFI-deadzone-mapper/releases/tag/v1.0.0)** 👈
 
 ---
 
